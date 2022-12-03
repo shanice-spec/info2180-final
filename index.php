@@ -14,7 +14,7 @@
     <!-- Beginning of nav bar -->
     <header>
         <ul>
-            <li><img src="" alt="Bug Icon"/></li>
+            <li><img src="media\35fc8ef6-8194-4482-9ea1-ef8a261d84fe.jpeg" alt="Bug Icon"/></li>
             <li>
                 <h3>Dolphin CRM</h3>
             </li>
@@ -30,11 +30,11 @@
                 <li class="sidebar-item" id="home">
                     <img src="media/home-24px.svg" alt="home"/>Home
                 </li>
-                <li style="display:none" class="sidebar-item" id="user">
-                    <img src="media/person_add-24px.svg" alt="add-user"/>Add User
+                <li style="display:none" class="sidebar-item" id="addcontact">
+                    <img src="media/person_add-24px.svg" alt="add-user"/>New Contact
                 </li>
-                <li class="sidebar-item" id="issue">
-                    <img src="media/add_circle-24px.svg" alt="add-issue"/>New Issue
+                <li class="sidebar-item" id="user">
+                    <img src="media/add_circle-24px.svg" alt="add-issue"/>Users
                 </li>
                 <li class="sidebar-item" id="logout">
                     <img src="media/power_settings_new-24px.svg" alt="logout"/>Logout

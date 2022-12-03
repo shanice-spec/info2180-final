@@ -10,7 +10,7 @@
 
     <header>
         <ul>
-            <li><img src="media/bug_report-white-18dp.svg" alt="bug" /></li>
+            <li><img src="media\35fc8ef6-8194-4482-9ea1-ef8a261d84fe.jpeg" alt="dolphin" /></li>
             <li>
                 <h3>Dolphin_crm</h3>
             </li>
@@ -24,14 +24,16 @@
                 <li class="sidebar-item" id="home">
                     <img src="media/home-24px.svg" alt="home"/>Home
                 </li>
-            <?php if($_SESSION['sessionID'] == "admin@project2.compassword123"){ ?>
-                <li class="sidebar-item" id="user">
-                    <img src="media/person_add-24px.svg" alt="add-user"/>Add User
+                <li class="sidebar-item" id="addcontact">
+                    <img src="media/person_add-24px.svg" alt="add-user"/>Add Contact
                 </li>
-            <?php } ?>
-                <li class="sidebar-item" id="view">
+            <?php if($_SESSION['sessionID'] == "admin@project2.compassword123"){ ?>
+                
+                <li class="sidebar-item" id="user">
                     <img src="media/add_circle-24px.svg" alt="view-users"/>Users
                 </li>
+            <?php } ?>
+                
                 <li class="sidebar-item" id="logout">
                     <img src="media/power_settings_new-24px.svg" alt="logout"/>Logout
                 </li>

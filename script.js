@@ -2,11 +2,11 @@
 var home = document.getElementById("home");
 var user = document.getElementById("user");
 var logout = document.getElementById("logout");
-var issue = document.getElementById("issue");
+var contact = document.getElementById("addcontact");
 //End of Side Bar items
 
 //Beginning of filter items headings
-var createNewIssue = document.getElementById("new_contact_create");
+
 var all = document.getElementById("all-filter");
 var support = document.getElementById("support-filter");
 var sales = document.getElementById("sales-filter");
@@ -38,6 +38,7 @@ var Useremail = document.getElementById("add-user-email");
 var Userpassword = document.getElementById("add-user-password");
 var role = document.getElementById("role");
 var createUser = document.getElementById("addSubmit");
+var createNewUser = document.getElementById("new_user_create");
 //End of create user
 
 //Beginning of view issue
@@ -174,7 +175,7 @@ if(home){
 //Check if user side bar item is click
 if(user){
     user.addEventListener("click", ()=>{
-        $.get("adduser.php", function(responseText){
+        $.get("viewusers.php", function(responseText){
             $("body").html(responseText);
         });
     });
@@ -182,8 +183,8 @@ if(user){
 //End of user side bar item check
 
 //Check if issue side bar item is clicked
-if(issue){
-    issue.addEventListener("click", ()=>{
+if(contact){
+    contact.addEventListener("click", ()=>{
         $.get("subpages/createIssue.php", function(responseText){
             $("body").html(responseText);
         });
@@ -204,9 +205,9 @@ if(logout){
 //End of logout issue side bar item check
 
 //Check if create issue is click
-if(createNewIssue){
-    createNewIssue.addEventListener("click", ()=>{
-        $.get("subpages/createIssue.php", function(responseText){
+if(createNewUser){
+    createNewUser.addEventListener("click", ()=>{
+        $.get("adduser.php", function(responseText){
             $("body").html(responseText);
         });
     });

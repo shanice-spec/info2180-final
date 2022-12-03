@@ -18,14 +18,16 @@
             <li class="sidebar-item" id="home">
                 <img src="media/home-24px.svg" alt="home"/>Home
             </li>
+            <li class="sidebar-item" id="addcontact">
+                <img src="media/person_add-24px.svg" alt="add-user"/>Add Contact
+            </li>
         <?php if($_SESSION['sessionID'] == "admin@project2.compassword123"){ ?>
+            
             <li class="sidebar-item" id="user">
-                <img src="media/person_add-24px.svg" alt="add-user"/>Add User
+                <img src="media/add_circle-24px.svg" alt="add-issue"/>Users
             </li>
         <?php } ?>
-            <li class="sidebar-item" id="view">
-                <img src="media/add_circle-24px.svg" alt="add-issue"/>User
-            </li>
+        
             <li class="sidebar-item" id="logout">
                 <img src="media/power_settings_new-24px.svg" alt="logout"/>Logout
             </li>
