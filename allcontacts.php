@@ -29,8 +29,8 @@
                     <img src="media/person_add-24px.svg" alt="add-user"/>Add User
                 </li>
             <?php } ?>
-                <li class="sidebar-item" id="issue">
-                    <img src="media/add_circle-24px.svg" alt="add-issue"/>Users
+                <li class="sidebar-item" id="view">
+                    <img src="media/add_circle-24px.svg" alt="view-users"/>Users
                 </li>
                 <li class="sidebar-item" id="logout">
                     <img src="media/power_settings_new-24px.svg" alt="logout"/>Logout
@@ -72,12 +72,16 @@
                             <div id="results">
                                 <?php foreach($results as $result){ ?>
 
-                                <?php if($result["type"]=="Support"){ ?>
+                                <?php if($result["type"]=="Support" && $result["assigned_to"] == $_SESSION['ID']){ ?>
+                                    <tr class="all Support assigned">
+                                <?php } elseif($result["type"]=="Sales Leads" && $result["assigned_to"] == $_SESSION['ID'] ){?>
+                                    <tr class="all Sales-Leads assigned">
+                                <?php } elseif($result["type"]=="Support"){ ?>
                                     <tr class="all Support">
-                                <?php } elseif($result["type"]=="Sales Leads"){?>
+                                <?php } elseif($result["type"]=="Sales Leads"){ ?>
                                     <tr class="all Sales-Leads">
                                 <?php } elseif($result["assigned_to"] == $_SESSION['ID'] ){ ?>
-                                    <tr class="all assignedContacts">
+                                    <tr class="all assigned">
                                 <?php }else{ ?>
                                     <tr class="all">
                                 <?php } ?>

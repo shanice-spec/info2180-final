@@ -36,6 +36,7 @@ var fname = document.getElementById("add-user-fname");
 var lname = document.getElementById("add-user-lname");
 var Useremail = document.getElementById("add-user-email");
 var Userpassword = document.getElementById("add-user-password");
+var role = document.getElementById("role");
 var createUser = document.getElementById("addSubmit");
 //End of create user
 
@@ -129,7 +130,7 @@ if(assigned_con){
         sales.classList.remove("active");
     
         all_issues.each(function(i){
-            if($(this).hasClass("assignedContacts")){
+            if($(this).hasClass("assigned")){
                 $(this).show();
             }
             else{
@@ -163,7 +164,7 @@ if(sales){
 //Check if home side bar item is clicked
 if(home){
     home.addEventListener("click", ()=>{
-        $.get("subpages/allIssues.php", function(responseText){
+        $.get("allcontacts.php", function(responseText){
             $("body").html(responseText);
         });
     });
@@ -173,7 +174,7 @@ if(home){
 //Check if user side bar item is click
 if(user){
     user.addEventListener("click", ()=>{
-        $.get("subpages/newuser.php", function(responseText){
+        $.get("adduser.php", function(responseText){
             $("body").html(responseText);
         });
     });
@@ -234,8 +235,9 @@ if(createIssue){
 if(createUser){
     createUser.addEventListener("click", ()=>{
         email_reg = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-        if(fname.value != "" && lname.value != "" && email_reg.test(Useremail.value) && /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/.test(Userpassword.value)){
-            $.get("scripts/createUser.php?fname="+fname.value+"&lname="+lname.value+"&email="+Useremail.value+"&password="+Userpassword.value, function(responseText){
+        
+        if(fname.value != "" && lname.value != "" && role.value !="" && email_reg.test(Useremail.value) && /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/.test(Userpassword.value)){
+            $.get("submitUser.php?fname="+fname.value+"&lname="+lname.value+"&email="+Useremail.value+"&password="+Userpassword.value+"&role="+role.options[role.selectedIndex].text, function(responseText){
                 eval(responseText);
                 fname.value="";
                 lname.value="";
